@@ -1,0 +1,88 @@
+/// desktop version
+
+.hero {
+  padding-top: 50px !important;
+  h1,
+  h2,
+  h3 {
+    margin: 5px 0; // Spacing between lines
+  }
+
+  h1 {
+    font-size: 65px;
+    font-weight: 300;
+  }
+
+  .developer {
+    font-size: 65px;
+    font-weight: 700;
+    background: linear-gradient(150deg, #ff0000, #800080) !important;
+    -webkit-background-clip: text !important; /* Use webkit background-clip for Safari */
+    color: transparent !important; /* Make the text color transparent */
+    display: inline-block !important; /* Ensures the gradient only applies to the text */
+    animation: textChange 3s ease-in-out infinite;
+  }
+
+  .social {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 70px;
+
+    img {
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px); /* Move the icon up by 5px */
+      }
+    }
+  }
+
+  .lottie {
+    display: inline-block;
+    margin-top: 20px;
+  }
+}
+
+///tablet version
+@media (max-width: 700px) {
+  .hero {
+    h1,
+    h2,
+    h3 {
+      font-size: 50px !important;
+    }
+  }
+}
+
+//mobile version
+@media (max-width: 500px) {
+  .hero {
+    h1,
+    h2,
+    h3 {
+      font-size: 33px !important;
+    }
+    .social {
+      margin-top: 40px;
+      img {
+        width: 40px;
+      }
+    }
+    .lottie {
+      margin-top: 10px;
+    }
+  }
+}
+
+@keyframes textChange {
+  0% {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
