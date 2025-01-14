@@ -7,8 +7,12 @@
 li {
   font-size: 18px;
   margin-right: 40px;
+
   a {
     color: #fff !important;
+    &:hover {
+      color: #ff0000 !important;
+    }
   }
 }
 .btn {
@@ -17,6 +21,9 @@ li {
   font-size: 18px;
   color: #fff;
   border-radius: 0px;
+  &:hover {
+    color: #ff0000 !important;
+  }
 }
 .navbar-toggler-icon {
   color: white !important;
