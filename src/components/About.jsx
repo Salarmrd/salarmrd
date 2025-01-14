@@ -4,7 +4,7 @@ import Counter from "./Counter";
 
 const About = () => {
   return (
-    <div className='container'>
+    <div className='container' id="about">
       <h2>About <span className={styles.me}>me</span></h2>
       <p className='mb-3 mb-md-5 mt-2'>My adventure in the tech world began 4 years ago with HTML and CSS, laying a solid foundation for my web development skills. However, my path took an interesting turn as I explored WordPress and UI/UX design, where I spent the next 4 years creating engaging and user-friendly websites.<br />
       A year ago, I decided to reignite my love for programming and dove back into the world of code. Currently, I'm a third-year software engineering student, honing my skills and exploring the exciting realms of frontend development. I've been immersing myself in modern tools and technologies like React, Sass, and Bootstrap, and I'm thrilled to bring these skills to life in my projects.<br />

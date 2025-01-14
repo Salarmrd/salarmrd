@@ -10,7 +10,7 @@ import JavaScriptt from "../assets/JavaScript.svg";
 
 const Skills = () => {
   return (
-    <div className="container text-center" style={{ maxWidth: "800px", marginTop: "75px" }}>
+    <div className="container text-center" style={{ maxWidth: "800px", marginTop: "75px" }} id="skills">
 
       <h2>Skills</h2>
       <div className="row g-1 mt-5 ">

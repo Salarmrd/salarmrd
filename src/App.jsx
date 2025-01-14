@@ -1,29 +1,20 @@
-import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import { Routes, Route } from 'react-router-dom'; // Import Routes and Route
+import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Skills from './components/Skills';
-import Form from "./components/Form"
-
+import HomePage from './pages/HomePage';
+import Info from './pages/Table';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-   <Navbar />
-   <Hero />
-   <About />
-   <Skills />
-   <Form />
-    </>
-  )
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      {/* Uncomment this if you add a Table page */}
+      <Route path="/info" element={<Info />} />
+    </Routes>
+  );
 }
 
-export default App
+export default App;

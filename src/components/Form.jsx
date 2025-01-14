@@ -3,7 +3,7 @@ import "./Form.scss";
 
 const Form = () => {
   return (
-    <div className="container center" style={{ marginTop: "75px", marginBottom: "75px" }}>
+    <div className="container center" style={{ marginTop: "75px", marginBottom: "75px" }} id="contact">
       <div className="row">
         {/* First Column */}
         <div className="col-12 col-md-6 d-flex flex-column align-items-center justify-content-center mb-4">
