@@ -14,7 +14,7 @@ const Form = () => {
       .sendForm("service_88rprrq", "template_y7uduhh", event.target, "d3Ffb2Y1-q67agNIR")
       .then(
         (result) => {
-          setMessage('Thank you for your message! We appreciate your feedback and will get back to you shortly.');
+          setMessage('Thank you for your message! We appreciate your trust and will get back to you shortly.');
           setSubmitted(true);
         },
         (error) => {
