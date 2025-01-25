@@ -29,5 +29,6 @@ li {
   color: white !important;
 }
 .collapse {
-  transition: none; // Faster animation
+  will-change: height, opacity;
+  transition: none !important; // Ensures no animation
 }
