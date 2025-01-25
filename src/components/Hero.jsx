@@ -22,9 +22,9 @@ const Hero = () => {
         <h1 >Hi, I’m <br/>Amirsalar Mehrdad</h1>
         <h1 className={styles.developer}>{texts[index]}</h1>
         <div className={styles.social}>
-        <img src={Github} alt="Discord Icon" />
-        <img src={Discord} alt="Discord Icon" />
-        <img src={Instagram} alt="Discord Icon" />
+        <a href="https://github.com/Salarmrd" _blank><img src={Github} alt="Github Icon" /></a>
+        <a href="https://discord.com/channels/@salarmrd" _blank><img src={Discord} alt="Discord Icon" /></a>
+        <a href="https://instagram.com/salarmehrdad" _blank><img src={Instagram} alt="Instagram Icon" /></a>
         </div>
         <Lottie animationData={Scrolldown} loop={true} className={styles.lottie}/>
 
