@@ -7,6 +7,18 @@ const Form = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    const form = event.target;
+    const formElements = form.elements;
+    
+    // Check if all required fields are filled out
+    for (let element of formElements) {
+      if (element.required && !element.value) {
+        alert('Please fill out all required fields.');
+        return; // Prevent form submission if fields are missing
+      }
+    }
+
+    // If validation passed, proceed with submission
     setMessage('Thank you for your message! We appreciate your feedback and will get back to you shortly.');
     setSubmitted(true);
   };
@@ -14,25 +26,23 @@ const Form = () => {
   return (
     <div className="container center" style={{ marginTop: "75px", marginBottom: "75px" }} id="contact">
       <div className="row">
-        
-          <div className="col-12 col-md-6 d-flex flex-column align-items-center justify-content-center mb-4">
-            <div>
-              <h2>Let's Talk</h2>
-              <p className="pform">
-                Have some big idea or brand to develop and need help? Then reach out, we'd love to hear
-                about your project and provide help.
-              </p>
-              <h4>Email</h4>
-              <p><a href="mailto:salarmrd@gmail.com" style={{color:"white"}}>salarmrd98@gmail.com</a> </p>
-              <h4>Socials</h4>
-              <ul className="list-unstyled">
+        <div className="col-12 col-md-6 d-flex flex-column align-items-center justify-content-center mb-4">
+          <div>
+            <h2>Let's Talk</h2>
+            <p className="pform">
+              Have some big idea or brand to develop and need help? Then reach out, we'd love to hear
+              about your project and provide help.
+            </p>
+            <h4>Email</h4>
+            <p><a href="mailto:salarmrd@gmail.com" style={{color:"white"}}>salarmrd98@gmail.com</a> </p>
+            <h4>Socials</h4>
+            <ul className="list-unstyled">
               <li><a href="https://instagram.com/salarmehrdad" target="_blank">Instagram</a></li>
-    <li><a href="https://github.com/Salarmrd" target="_blank">Github</a></li>
-    <li><a href="https://discord.com/channels/@salarmrd" target="_blank">Discord</a> </li>
-              </ul>
-            </div>
+              <li><a href="https://github.com/Salarmrd" target="_blank">Github</a></li>
+              <li><a href="https://discord.com/channels/@salarmrd" target="_blank">Discord</a> </li>
+            </ul>
           </div>
-        
+        </div>
 
         <div className="col-12 col-md-6">
           {!submitted ? (
