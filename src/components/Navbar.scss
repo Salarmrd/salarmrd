@@ -1,9 +1,24 @@
 .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease; /* Smooth transition for toggling */
 }
+
 .navbar-toggler {
   border-color: #fff;
+  background: transparent;
 }
+
+.navbar-toggler .close-icon {
+  font-size: 22px; /* Adjusted font size for cross */
+  color: white; /* Ensures cross is white */
+  line-height: 1; /* Centers the cross icon */
+  display: inline-block;
+  transition: transform 0.3s ease; /* Smooth effect for toggling */
+}
+
 li {
   font-size: 18px;
   margin-right: 40px;
@@ -15,6 +30,7 @@ li {
     }
   }
 }
+
 .btn {
   padding: 8px 15px;
   border: 1px solid #fff !important;
@@ -25,10 +41,8 @@ li {
     color: #ff0000 !important;
   }
 }
-.navbar-toggler-icon {
-  color: white !important;
-}
+
 .collapse {
   will-change: height, opacity;
-  transition: none !important; // Ensures no animation
+  transition: none !important; /* Ensures no animation */
 }
