@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import emailjs from "emailjs-com";
 import "./Form.scss";
 
 const Form = () => {
@@ -7,20 +8,20 @@ const Form = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const form = event.target;
-    const formElements = form.elements;
-    
-    // Check if all required fields are filled out
-    for (let element of formElements) {
-      if (element.required && !element.value) {
-        alert('Please fill out all required fields.');
-        return; // Prevent form submission if fields are missing
-      }
-    }
 
-    // If validation passed, proceed with submission
-    setMessage('Thank you for your message! We appreciate your feedback and will get back to you shortly.');
-    setSubmitted(true);
+    // Send the form data to EmailJS
+    emailjs
+      .sendForm("service_88rprrq", "template_y7uduhh", event.target, "d3Ffb2Y1-q67agNIR")
+      .then(
+        (result) => {
+          setMessage('Thank you for your message! We appreciate your feedback and will get back to you shortly.');
+          setSubmitted(true);
+        },
+        (error) => {
+          console.log(error.text);
+          setMessage('Sorry, something went wrong. Please try again later.');
+        }
+      );
   };
 
   return (
@@ -47,40 +48,40 @@ const Form = () => {
         <div className="col-12 col-md-6">
           {!submitted ? (
             <form onSubmit={handleSubmit}>
-              <div className="mb-3">
-                <label htmlFor="name" className="form-label">
-                  Name
-                </label>
-                <input type="text" className="form-control" id="name" placeholder="Your name" required />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="email" className="form-label">
-                  Email address
-                </label>
-                <input type="email" className="form-control" id="email" placeholder="name@example.com" required />
-              </div>
-              <div className="mb-3">
-                <label className="form-label">What service are you interested in</label>
-                <select className="form-select" aria-label="Default select example" required>
-                  <option value="" disabled selected>select project type</option>
-                  <option value="Frontend">Frontend website development</option>
-                  <option value="ui">User Interface design</option>
-                  <option value="ux">User experience design</option>
-                  <option value="wordpress">Website design with Wordpress</option>
-                </select>
-              </div>
-              <div className="mt-3">
-                <label htmlFor="message" className="form-label">
-                  Your message
-                </label>
-                <textarea className="form-control" id="message" name="message" rows="5" placeholder="Type your message here..." required></textarea>
-              </div>
-              <div>
-                <button type="submit" className="btn btn-outline-light mt-2">
-                  Submit
-                </button>
-              </div>
-            </form>
+            <div className="mb-3">
+              <label htmlFor="name" className="form-label">
+                Name
+              </label>
+              <input type="text" className="form-control" id="name" name="from_name" placeholder="Your name" required />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="email" className="form-label">
+                Email address
+              </label>
+              <input type="email" className="form-control" id="email" name="from_email" placeholder="name@example.com" required />
+            </div>
+            <div className="mb-3">
+              <label className="form-label">What service are you interested in</label>
+              <select className="form-select" name="service" aria-label="Default select example" required>
+                <option value="" disabled>Select project type</option>
+                <option value="Frontend">Frontend website development</option>
+                <option value="ui">User Interface design</option>
+                <option value="ux">User experience design</option>
+                <option value="wordpress">Website design with Wordpress</option>
+              </select>
+            </div>
+            <div className="mt-3">
+              <label htmlFor="message" className="form-label">
+                Your message
+              </label>
+              <textarea className="form-control" id="message" name="message" rows="5" placeholder="Type your message here..." required></textarea>
+            </div>
+            <div>
+              <button type="submit" className="btn btn-outline-light mt-2">
+                Submit
+              </button>
+            </div>
+          </form>
           ) : (
             <div className="alert alert-success mt-3">
               {message}
